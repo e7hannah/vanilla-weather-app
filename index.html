@@ -7,12 +7,60 @@
     <link rel="stylesheet" href="src/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/e5075ffba1.js" crossorigin="anonymous"></script>
     <title>Weather App</title>
 </head>
 <body>
     <div class="container">
-        <h1>Hello</h1>
-        <a class="btn btn-primary">Hello</a>
+        <div class="weather-app">
+            <div class="row">
+                <form id="search-form"></form>
+                    <div class="col-8">
+                    
+                            <input type="text" class="form-control" placeholder="Enter City" />
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" id="search-button">
+                            Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-8">
+                    <h2>
+                        City Name
+                    </h2>
+                    <ul>
+                        <li>
+                            Date TIme
+                        </li>
+                        <li>
+                            forecast
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="col-4">
+                    <img src="icons/animated/cloudy-day-1.svg" alt="partly cloudy">
+                    <h1>
+                     #
+                    </h1>
+                    <p>° F | C</p>
+                </div>
+            </div>
+
+            <hr>
+
+
+                
+                
+            
+            </div>
+        </div>    
     </div>
     <script src="src/index.js"></script>
 </body>
