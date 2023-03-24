@@ -14,10 +14,8 @@ ul{
     padding-left: 0;
 }
 
-button{
-    width: 250px;
-    max-width: 100%;
-    padding: 15px;
+.btn{
+    width: 190px;
 }
 .app{
     background: #fff;

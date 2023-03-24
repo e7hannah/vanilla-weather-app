@@ -14,19 +14,17 @@
     <div class="container">
         <div class="app">
             <div class="weather">
-                <div class="row">
-                    <form id="search-form"></form>
-                        <div class="col-8">
-                        
-                                <input type="text" class="form-control" placeholder="Enter City" />
-                        </div>
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-primary" id="search-button">
-                                Search
-                            </button>
+                    <form id="search-form">
+                        <div class="row">
+                            <div class="col-8">
+                                <input type="search" class="form-control" id="city-input" placeholder="Enter a city..." autocomplete="off"/>
+                            </div>
+                            <div class="col-4">
+                                <input type="submit" value="Search" class="btn btn-primary" id="search-button">
+                            </div>
                         </div>
                     </form>
-                </div>
+            
 
                 <hr>
 

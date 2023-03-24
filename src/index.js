@@ -28,9 +28,21 @@ headerIconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/a
 headerIconElement.setAttribute("alt", response.data.condition.icon);
 }
 
-apiKey="f519b0o301tbb4d7afd52c94213690f1";
-units = "imperial";
-city = "Maui";
-apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
+function search(city){
+    apiKey="f519b0o301tbb4d7afd52c94213690f1";
+    units = "imperial";
+    apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
 
-axios.get(apiUrl).then(displayTemperature);
+    axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+    console.log(cityInputElement.value);
+}
+
+
+let form = document.querySelector("#search-form")
+form.addEventListener("submit", handleSubmit);
