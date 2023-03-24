@@ -19,16 +19,18 @@ let temperatureElement = document.querySelector("#temperature");
 let cityElement = document.querySelector("#city");
 let conditionElement = document.querySelector("#condition");
 let dateElement = document.querySelector("#date");
+let headerIconElement = document.querySelector("#header-icon");
 temperatureElement.innerHTML = Math.round(response.data.temperature.current);
 cityElement.innerHTML = response.data.city;
 conditionElement.innerHTML = response.data.condition.description;
-dateElement.innerHTML = formatDate(response.data.time * 1000) ;
+dateElement.innerHTML = formatDate(response.data.time * 1000);
+headerIconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
+headerIconElement.setAttribute("alt", response.data.condition.icon);
 }
 
 apiKey="f519b0o301tbb4d7afd52c94213690f1";
 units = "imperial";
-city = "Paris";
+city = "Maui";
 apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
 
-console.log(apiUrl);
 axios.get(apiUrl).then(displayTemperature);
