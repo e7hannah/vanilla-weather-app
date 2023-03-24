@@ -6,8 +6,7 @@ h1{
 
 p{
     margin: 0 auto;
-    padding 0;
-    float: left;
+    padding: 0;
 }
 
 ul{
@@ -38,15 +37,43 @@ button{
 }
 
 .header-larger-text{
-    font-size: 35px;}
+    font-size: 38px;
+    font-weight: 400;
+    margin: 20px 0 10px;
+}
 
 .header-smaller-text{
     font-size: 15px;
 }
 
-.header-image{
-    margin: 0 auto;
+
+.header-icon{
+    margin-top: 10px;
+    margin-right: 5px;
     width: 90px;
     height: auto;
-    float: left;
+    line-height: 1;
+    
+
+}
+
+.header-temp{
+    align-items: center;
+    margin-top: 30px;
+}
+
+.header-temp strong{
+        font-size: 70px;
+        font-weight: 400;
+        margin-left: 10px; 
+}
+
+.header-temp small{
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 36px;
+        position: relative;
+        top: -34px;
+      
+        
 }
