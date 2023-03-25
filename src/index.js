@@ -20,7 +20,10 @@ let cityElement = document.querySelector("#city");
 let conditionElement = document.querySelector("#condition");
 let dateElement = document.querySelector("#date");
 let headerIconElement = document.querySelector("#header-icon");
-temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+
+farenheitTemp = response.data.temperature.current;
+
+temperatureElement.innerHTML = Math.round(farenheitTemp);
 cityElement.innerHTML = response.data.city;
 conditionElement.innerHTML = response.data.condition.description;
 dateElement.innerHTML = formatDate(response.data.time * 1000);
@@ -40,9 +43,32 @@ function handleSubmit(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
     search(cityInputElement.value);
-    console.log(cityInputElement.value);
 }
 
+function displayCelciusTemp(event){
+    event.preventDefault();
+    farenheitLink.classList.remove("active");
+    celciusLink.classList.add("active");
+    let celciusTemp = (farenheitTemp - 32) * (5/9);
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(celciusTemp);
+}
+
+function displayFarenheitTemp(event){
+    event.preventDefault();
+    farenheitLink.classList.add("active");
+    celciusLink.classList.remove("active");
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(farenheitTemp);
+}
+
+let farenheitTemp = null;
 
 let form = document.querySelector("#search-form")
 form.addEventListener("submit", handleSubmit);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelciusTemp)
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", displayFarenheitTemp)

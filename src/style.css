@@ -14,6 +14,11 @@ ul{
     padding-left: 0;
 }
 
+footer{
+    font-size: 10px;
+    margin: 0 5px;
+}
+
 .btn{
     width: 190px;
 }
@@ -75,4 +80,10 @@ ul{
         top: -34px;
       
         
+}
+
+.header-temp .active{
+    color:#878787;
+    cursor: default;
+    text-decoration: none;
 }
