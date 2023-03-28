@@ -19,7 +19,7 @@ footer{
 }
 
 .btn{
-    width: 190px;
+    width: 250px;
 }
 .app{
     background: #fff;
@@ -67,6 +67,7 @@ footer{
     font-size: 70px;
     font-weight: 400;
     margin-left: 10px; 
+    margin-top: 20px;
 }
 
 .header-temp small{
@@ -77,11 +78,6 @@ footer{
     top: -34px;    
 }
 
-.header-temp .active{
-    color:#878787;
-    cursor: default;
-    text-decoration: none;
-}
 
 .weather-forecast{
     margin: 20 auto;
