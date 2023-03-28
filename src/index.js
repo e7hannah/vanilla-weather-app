@@ -13,6 +13,31 @@ function formatDate(timestamp){
 
 }
 
+function displayForecast(){
+    let forecastElement = document.querySelector("#weather-forecast");
+
+    let forecastHTML = `<div class="row">`;
+    let days = ["Thu", "Fri", "Sat","Sun","Mon","Tue"]
+    days.forEach(function(day){
+        forecastHTML = forecastHTML +
+            `<div class="col-2">
+                <div class="forecast-day">
+                    ${day}
+                </div>
+                <img class="forecast-icon" id="forecast-icon" src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" alt="" width="38"/>
+                <div class="forecast-temp">
+                    <span class="forecast-temp-high">68°</span>
+                    <span class="forecast-temp-low">45°</span>
+                </div>
+            </div>`;
+    })
+   forecastHTML = forecastHTML + `</div>`;
+
+   
+   forecastElement.innerHTML= forecastHTML;
+
+}
+
 function displayTemperature(response){
 
 let temperatureElement = document.querySelector("#temperature");
@@ -72,3 +97,7 @@ celciusLink.addEventListener("click", displayCelciusTemp)
 
 let farenheitLink = document.querySelector("#farenheit-link");
 farenheitLink.addEventListener("click", displayFarenheitTemp)
+
+search("Paris");
+
+displayForecast();
