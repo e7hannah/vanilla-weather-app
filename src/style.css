@@ -49,6 +49,14 @@ footer{
     text-transform: capitalize;
 }
 
+.header-smallest-text {
+    font-size: 12px;
+}
+
+.capitalize{
+    text-transform: capitalize;
+}
+
 
 .header-icon{
     margin-top: 10px;

@@ -67,10 +67,11 @@ function getForecast(coordinates){
 }
 
 function displayTemperature(response){
-
+console.log(response);
 let temperatureElement = document.querySelector("#temperature");
 let cityElement = document.querySelector("#city");
 let conditionElement = document.querySelector("#condition");
+let windElement = document.querySelector("#wind");
 let dateElement = document.querySelector("#date");
 let headerIconElement = document.querySelector("#header-icon");
 
@@ -79,6 +80,7 @@ farenheitTemp = response.data.temperature.current;
 temperatureElement.innerHTML = Math.round(farenheitTemp);
 cityElement.innerHTML = response.data.city;
 conditionElement.innerHTML = response.data.condition.description;
+windElement.innerHTML = Math.round(response.data.wind.speed);
 dateElement.innerHTML = formatDate(response.data.time * 1000);
 headerIconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
 headerIconElement.setAttribute("alt", response.data.condition.icon);
